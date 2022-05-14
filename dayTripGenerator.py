@@ -1,6 +1,4 @@
-from operator import ge
 import random
-from webbrowser import get
 
 
 destinations_list = ['Park','Zoo','Childrens Museum','Pool']
@@ -37,7 +35,7 @@ user_choice = input('Do you want to make changes?   Y/N \n')
 
 while user_choice[0].upper() == 'Y':
 
-    decisions = input('''Please select from the following:
+    decisions = input('''\nPlease select from the following:
                 1. Destination
                 2. Restaurant
                 3. Transportation
@@ -46,21 +44,20 @@ while user_choice[0].upper() == 'Y':
                 \n''')
     if decisions == str(1):
         destination = get_destination()
-        # destination = random.choice(destinations_list)
     elif decisions == str(2):
-        restaurant = random.choice(restaurants_list)
+        restaurant = get_restaurant()
     elif decisions == str(3):
-        transportation = random.choice(transportation_list)
+        transportation = get_transportation()
     elif decisions == str(4):
-        entertainment = random.choice(entertainment_list)
+        entertainment = get_entertainment()
     else:
-        destination = random.choice(destinations_list)
-        restaurant = random.choice(restaurants_list)
-        transportation = random.choice(transportation_list)
-        entertainment = random.choice(entertainment_list)
+        destination = get_destination()
+        restaurant = get_restaurant()
+        transportation = get_transportation()
+        entertainment = get_entertainment()
         
         
-    print(f'Your destination will be {destination}.\nYour restaurant will be {restaurant}.\nYour form of transportation will be {transportation}.\nYour entertainment will be {entertainment}.\n')
+    print(f'\nYour destination will be {destination}.\nYour restaurant will be {restaurant}.\nYour form of transportation will be {transportation}.\nYour entertainment will be {entertainment}.\n')
     user_choice = input('Do you wish to make any additional changes?   Y/N \n')
 
 
