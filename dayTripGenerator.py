@@ -15,36 +15,44 @@ entertainment = random.choice(entertainment_list)
 
 
 print(greeting + ' ' + selection_greeting)
-print(f'Your destination will be {destination}\nYour restaurant will be {restaurant}\nYour form of transportation will be {transportation}\nYour entertainment will be {entertainment}\n.')
+print(f'Your destination will be {destination}.\nYour restaurant will be {restaurant}.\nYour form of transportation will be {transportation}.\nYour entertainment will be {entertainment}.\n')
 
 
-user_choice = input('Do you want to make changes? ')
+user_choice = input('Do you want to make changes?   Y/N ')             
 
-while user_choice == 'Y':
+while user_choice[0].upper() == 'Y':
 
-    user_choice = input('''Please select from the following:
+    decisions = input('''Please select from the following:
                 1. Destination
                 2. Restaurant
                 3. Transportation
                 4. Entertainment
                 5. ALL
                 ''')
-    if user_choice == 1:
+    if decisions == str(1):
         destination = random.choice(destinations_list)
-    elif user_choice == 2:
+        print(destination)
+    elif decisions == str(2):
         restaurant = random.choice(restaurants_list)
-    elif user_choice == 3:
+        print(restaurant)
+    elif decisions == str(3):
         transportation = random.choice(transportation_list)
-    elif user_choice == 4:
+        print(transportation)
+    elif decisions == str(4):
         entertainment = random.choice(entertainment_list)
+        print(entertainment)
+        break
     else:
         destination = random.choice(destinations_list)
         restaurant = random.choice(restaurants_list)
         transportation = random.choice(transportation_list)
         entertainment = random.choice(entertainment_list)
+        print(destination, restaurant, transportation, entertainment)
+    user_choice = input('Do you wish to make any additional changes?   Y/N ')
 
 
 print('Enjoy your day and thank you for choosing our Day Trip Generator!')
+
 
 
 
