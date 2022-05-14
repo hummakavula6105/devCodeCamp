@@ -18,13 +18,33 @@ print(greeting + ' ' + selection_greeting)
 print(f'Your destination will be {destination}\nYour restaurant will be {restaurant}\nYour form of transportation will be {transportation}\nYour entertainment will be {entertainment}\n.')
 
 
-user_choice = 'Y'
+user_choice = input('Do you want to make changes? ')
 
 while user_choice == 'Y':
-    user_choice = input("Do you want to make any changes to your trip? If yes, please select #1: Destination, #2: restaurant, #3: transportation, #4: entertainment")
-    #if 'Y'
+
+    user_choice = input('''Please select from the following:
+                1. Destination
+                2. Restaurant
+                3. Transportation
+                4. Entertainment
+                5. ALL
+                ''')
+    if user_choice == 1:
+        destination = random.choice(destinations_list)
+    elif user_choice == 2:
+        restaurant = random.choice(restaurants_list)
+    elif user_choice == 3:
+        transportation = random.choice(transportation_list)
+    elif user_choice == 4:
+        entertainment = random.choice(entertainment_list)
+    else:
+        destination = random.choice(destinations_list)
+        restaurant = random.choice(restaurants_list)
+        transportation = random.choice(transportation_list)
+        entertainment = random.choice(entertainment_list)
 
 
+print('Enjoy your day and thank you for choosing our Day Trip Generator!')
 
 
 
